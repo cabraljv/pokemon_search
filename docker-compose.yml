@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  pokemon-filter:
+    container_name: pokemon-filter
+    build:
+      context: .
+    working_dir: /app
+    volumes:
+      - pokemon-filter-node-modules:/app/node_modules
+      - ./:/app
+    environment:
+      PORT: 8080
+    ports:
+      - 8080:8080
+volumes:
+    pokemon-filter-node-modules:
